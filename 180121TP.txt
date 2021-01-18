@@ -1,0 +1,30 @@
+#TP 18012021
+#Exercice.
+
+#Voir le repo
+#https://github.com/argiris-mat/docker-compose-nginx-reverse-proxy
+
+#ope après recup du repo git
+#Télecharger à l'aide de git.
+#git clone https://github.com/argiris-mat/docker-compose-nginx-reverse-proxy
+
+#Effacer l'ensemble des fichiers git (afin plus tard de récréer notre propre versionning)
+
+#Ecrire un script launch.sh qui automatise le lancement de ce projet
+#construire image alpine/python de l'appli
+cd flask_app
+#build de l'img python/alpine appli
+docker build . -t app
+
+#const image srvr nginx
+cd ../nginx
+#build nginx
+docker build . -t my-nginx
+#lancer l'appli, Versionner le projet
+docker-compose up
+
+#hors scope de l'exercice
+#Partager le projet versionné sur un repo de github devopsunited
+#git push
+
+
